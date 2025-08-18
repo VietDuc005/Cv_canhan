@@ -9,7 +9,14 @@
                 behavior: 'smooth'
             });
         }
-
+// Profile image click effect
+            const profileImg = document.getElementById('profileImg');
+            profileImg.addEventListener('click', function() {
+                this.style.transform = 'scale(1.1) rotate(360deg)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 600);
+            });
         // Animate cards on scroll
         function animateOnScroll() {
             const cards = document.querySelectorAll('.card');
@@ -149,4 +156,5 @@
                 }
             });
         });
+
       
