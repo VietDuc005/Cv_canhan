@@ -59,13 +59,15 @@
 
         nav a:hover {
             color: #f093fb;
+            background: rgba(255, 255, 255, 0.1);
         }
 
         nav a::after {
             content: '';
             position: absolute;
             bottom: -5px;
-            left: 0;
+            left: 50%;
+            transform: translateX(-50%);
             width: 0;
             height: 2px;
             background: #f093fb;
@@ -329,6 +331,7 @@
             }
 
         }
+
 
 
 
