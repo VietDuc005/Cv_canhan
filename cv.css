@@ -291,11 +291,11 @@
             }
 
             .hero h1 {
-                font-size: 2rem;
+                 font-size: clamp(2rem, 5vw, 3rem);
             }
 
             .card h2 {
-                font-size: 2rem;
+                font-size: clamp(2rem, 4vw, 2.5rem);
             }
 
             .container {
@@ -349,6 +349,33 @@
     .profile-img { width: 100px; height: 100px; }
 }
 
+@media (min-width: 1400px) {
+    .container { max-width: 1400px; }
+    .skills-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+}
+@media (hover: none) and (pointer: coarse) {
+    /* Tắt hover effects trên thiết bị cảm ứng */
+    .card:hover, .skill-item:hover { transform: none; }
+    nav a { padding: 1rem 1.5rem; }  /* Touch targets lớn hơn */
+}
+@media (prefers-reduced-motion: reduce) {
+    /* Tắt animation cho người dùng nhạy cảm */
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+    }
+}
+
+@media (prefers-contrast: high) {
+    /* Tăng contrast cho người khiếm thị */
+    .hero, .card { border: 2px solid rgba(255, 255, 255, 0.8); }
+}
+@media (max-width: 768px) {
+    /* Giảm blur effect cho mobile */
+    backdrop-filter: blur(5px);  /* từ 10px xuống 5px */
+    
+    /* Ẩn một số particles */
+    .particle:nth-child(n+10) { display: none; }
+}
 
 
 
