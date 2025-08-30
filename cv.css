@@ -335,6 +335,13 @@
 
         }
 
+@media (max-width: 1024px) {
+    .container { padding: 0 1.5rem; }
+    .hero { padding: 3rem 1.5rem; }
+    .skills-grid, .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+}
 
 
 
