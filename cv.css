@@ -343,6 +343,11 @@
     }
 }
 
+@media (max-width: 480px) {
+    .skills-grid { grid-template-columns: 1fr 1fr; }  /* 2 cột thay vì auto */
+    .projects-grid { gap: 1rem; }
+    .profile-img { width: 100px; height: 100px; }
+}
 
 
 
