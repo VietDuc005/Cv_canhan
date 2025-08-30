@@ -50,6 +50,11 @@
             font-weight: bold;
             transition: color 0.3s ease;
             position: relative;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            min-height: 44px; /* Touch-friendly minimum */
+            display: flex;
+            align-items: center;
         }
 
         nav a:hover {
@@ -324,6 +329,7 @@
             }
 
         }
+
 
 
 
