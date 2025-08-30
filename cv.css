@@ -323,3 +323,45 @@
             }
 
         }
+/* 1) Chừa khoảng trống cho nav cố định */
+:root {
+  --nav-h: 64px;
+}
+nav { height: var(--nav-h); display: flex; align-items: center; }
+section { padding-top: calc(var(--nav-h) + 24px); }
+
+/* 2) Tránh nội dung bị che khi anchor-scroll */
+section[id] { scroll-margin-top: calc(var(--nav-h) + 16px); }
+
+/* 3) Font chữ linh hoạt (fluid typography) */
+.hero h1 { font-size: clamp(1.75rem, 4vw, 3rem); }
+.card h2 { font-size: clamp(1.5rem, 3.5vw, 2.5rem); }
+.hero p, .card p, .card li { font-size: clamp(1rem, 2.5vw, 1.1rem); }
+
+/* 4) Tối ưu cho màn cực nhỏ (<= 480px) */
+@media (max-width: 480px) {
+  :root { --nav-h: 56px; }
+  .container { padding: 0 0.75rem; }
+  .hero { padding: 2.5rem 1rem; margin: 1rem; }
+  .profile-img { width: 120px; height: 120px; }
+  nav ul { gap: 0.25rem; }
+}
+
+/* 5) Tránh 100vh gây tràn trên mobile (thanh địa chỉ động) */
+section { min-height: 100svh; } /* dùng svh thay cho vh trên mobile */
+
+/* 6) An toàn “tai thỏ” iOS */
+body { padding-top: env(safe-area-inset-top); }
+nav { padding-top: env(safe-area-inset-top); }
+
+/* 7) Tuỳ chọn: giảm chuyển động cho người dùng không thích animation */
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+  .particles, .particle { display: none !important; }
+}
+
+/* 8) Cải thiện hover trên mobile (không có hover) */
+@media (hover: none) {
+  .btn:hover, .card:hover, .project-item:hover, .skill-item:hover { transform: none; box-shadow: none; }
+}
+
