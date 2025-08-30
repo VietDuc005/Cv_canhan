@@ -85,6 +85,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            text-align: center;
         }
 
         .container {
@@ -93,6 +94,10 @@
             padding: 0 2rem;
             text-align: center;
             width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
         /* Hero Section */
@@ -106,6 +111,11 @@
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
             border: 1px solid rgba(255, 255, 255, 0.2);
             animation: fadeInUp 1s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
         }
 
         .profile-img {
@@ -153,6 +163,11 @@
             transition: transform 0.3s ease;
             opacity: 0;
             transform: translateY(50px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
         }
 
         .card.animate {
@@ -376,6 +391,7 @@
     /* Ẩn một số particles */
     .particle:nth-child(n+10) { display: none; }
 }
+
 
 
 
